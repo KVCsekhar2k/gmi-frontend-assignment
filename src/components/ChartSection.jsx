@@ -19,22 +19,41 @@ export default function ChartSection() {
   const [query, setQuery] = useState("");
   const inputRef = useRef(null);
 
-  // Fetch from backend based on selected category
+  // ✅ Default dummy data to show initially
+  const defaultChartData = [
+    { year: 2015, value: 2000 },
+    { year: 2016, value: 4000 },
+    { year: 2017, value: 6500 },
+    { year: 2018, value: 8000 },
+    { year: 2019, value: 12000 },
+    { year: 2020, value: 15000 },
+    { year: 2021, value: 18000 },
+    { year: 2022, value: 21000 },
+    { year: 2023, value: 26000 },
+    { year: 2024, value: 31000 },
+  ];
+
+  // ✅ Fetch backend data when category changes
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get("http://localhost:5000/api/data/all", {
           params: { category: activeCategory },
         });
-        setData(res.data);
+        if (res.data && res.data.length > 0) {
+          setData(res.data);
+        } else {
+          setData(defaultChartData); // fallback to dummy data
+        }
       } catch (err) {
         console.error("Error fetching data:", err);
+        setData(defaultChartData); // fallback to dummy data
       }
     };
     fetchData();
   }, [activeCategory]);
 
-  // Handle AI search query
+  // ✅ AI-powered search handler
   const handleAiSearch = async (e) => {
     e.preventDefault();
     if (!query.trim()) return;
@@ -42,24 +61,30 @@ export default function ChartSection() {
       const res = await axios.post("http://localhost:5000/api/ai/query", {
         query,
       });
-      if (res.data && res.data.chartData) {
+      if (res.data && res.data.chartData?.length) {
         setActiveCategory(res.data.category || activeCategory);
         setData(res.data.chartData);
+      } else {
+        setData(defaultChartData); // fallback
       }
     } catch (err) {
       console.error("AI search error:", err);
+      setData(defaultChartData);
     }
   };
 
-  // Convert raw dataset into chart-friendly format (group by year)
-  const chartData = Object.values(
-    data.reduce((acc, row) => {
-      const year = row.year;
-      if (!acc[year]) acc[year] = { year, value: 0 };
-      acc[year].value += Number(row.value || 0);
-      return acc;
-    }, {})
-  ).sort((a, b) => a.year - b.year);
+  // ✅ Format data for chart
+  const chartData =
+    data && data.length
+      ? Object.values(
+          data.reduce((acc, row) => {
+            const year = row.year || row.Year; // handle Excel keys
+            if (!acc[year]) acc[year] = { year, value: 0 };
+            acc[year].value += Number(row.value || row.Value || 0);
+            return acc;
+          }, {})
+        ).sort((a, b) => a.year - b.year)
+      : defaultChartData;
 
   const categories = [
     "Passenger Vehicles",
@@ -144,7 +169,8 @@ export default function ChartSection() {
             <XAxis dataKey="year" />
             <YAxis />
             <Tooltip formatter={(v) => v.toLocaleString()} />
-            <Bar dataKey="value" fill="#007bff" />
+            {/* ✅ Single color for all bars */}
+            <Bar dataKey="value" fill="#0066FF" barSize={40} />
           </BarChart>
         </ResponsiveContainer>
       </div>
