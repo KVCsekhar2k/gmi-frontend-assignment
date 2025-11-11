@@ -1,0 +1,128 @@
+.iea-footer {
+  background: #f7f7f7;
+  padding: 50px 80px 20px;
+  font-family: "Inter", Arial, sans-serif;
+  color: #4a4a4a;
+}
+
+/* ------------ Link Columns ------------ */
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.footer-col {
+  flex: 1 1 220px;
+  margin-right: 20px;
+}
+
+.footer-col h4 {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  font-size: 15px;
+  line-height: 1.9;
+  cursor: pointer;
+}
+
+.footer-col li:hover {
+  text-decoration: underline;
+}
+
+/* ------------ Vertical Agency Label ------------ */
+.footer-agency {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0050ff;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  text-align: right;
+}
+
+/* ------------ Bottom Row ------------ */
+.footer-bottom {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-copy span {
+  cursor: pointer;
+}
+
+.footer-copy span:hover {
+  text-decoration: underline;
+}
+
+/* ------------ Social Icons ------------ */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #777;
+  font-size: 20px;
+}
+
+.footer-social svg {
+  background: #ededed;
+  border-radius: 50%;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.footer-social svg:hover {
+  background: #dcdcdc;
+}
+
+/* ------------ Responsive ------------ */
+@media (max-width: 900px) {
+  .iea-footer {
+    padding: 40px 24px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-agency {
+    position: static;
+    writing-mode: horizontal-tb;
+    text-align: left;
+    margin-top: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

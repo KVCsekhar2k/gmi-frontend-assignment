@@ -1,0 +1,140 @@
+.related-content {
+  background: #f5f5f5;
+  padding: 60px 40px 100px;
+  font-family: "Inter", Arial, sans-serif;
+  color: #111;
+}
+
+.rc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rc-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* ---------- Tabs ---------- */
+.rc-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.rc-tab {
+  background: #e8e8e8;
+  border: none;
+  border-radius: 18px;
+  padding: 6px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rc-tab.active {
+  background: #000;
+  color: #fff;
+}
+
+.rc-tab:hover {
+  background: #ccc;
+}
+
+/* ---------- Cards ---------- */
+.rc-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.rc-card {
+  flex: 1 1 500px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.rc-card.light-card {
+  background: #f2f6ff;
+  padding: 24px;
+}
+
+.rc-card.light-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.rc-card.light-card p {
+  color: #444;
+  line-height: 1.5;
+  font-size: 15px;
+  margin-bottom: 16px;
+}
+
+.rc-link {
+  color: #0050ff;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Dark image card */
+.rc-card.dark-card {
+  position: relative;
+  background: #000;
+  color: #fff;
+}
+
+.rc-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.rc-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.rc-overlay h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.rc-overlay p {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.rc-footer {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .related-content {
+    padding: 40px 20px;
+  }
+
+  .rc-cards {
+    flex-direction: column;
+  }
+
+  .rc-card {
+    flex: 1 1 100%;
+  }
+}

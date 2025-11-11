@@ -1,0 +1,139 @@
+.hero {
+  font-family: "Inter", Arial, sans-serif;
+  color: #111;
+}
+
+/* ---------- Top Section ---------- */
+.hero-top {
+  background: #f2f6ff;
+  padding: 60px 0 40px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 720px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* ---------- Meta Info ---------- */
+.hero-meta {
+  display: flex;
+  gap: 60px;
+  font-size: 15px;
+  color: #444;
+}
+
+.meta-label {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.meta-value {
+  font-weight: 500;
+}
+
+.meta-value.link {
+  color: #0050ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Tabs ---------- */
+.hero-tabs {
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  padding: 0 40px;
+}
+
+.tab {
+  padding: 16px 24px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  color: #222;
+}
+
+.tab.active {
+  border-bottom: 3px solid #111;
+}
+
+/* ---------- Content Section ---------- */
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 0;
+  gap: 60px;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-left h2 {
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-right {
+  flex: 2;
+  color: #333;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.hero-right p {
+  margin-bottom: 20px;
+}
+
+.link {
+  color: #0050ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0;
+  }
+
+  .hero-left h2 {
+    font-size: 24px;
+  }
+}

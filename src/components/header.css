@@ -1,0 +1,134 @@
+.header {
+  width: 100%;
+  background: #fff;
+  font-family: "Inter", Arial, sans-serif;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* ---------- Top Links ---------- */
+.header-top {
+  background: #fff;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 13px;
+  color: #333;
+  padding: 6px 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-top ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.header-top li {
+  cursor: pointer;
+}
+
+.header-top li:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Main Navbar ---------- */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0050ff;
+  font-family: "Arial Rounded MT", sans-serif;
+}
+
+/* ---------- Search ---------- */
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-right: 6px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  background: transparent;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* ---------- Navigation ---------- */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 15px;
+  color: #111;
+  font-weight: 500;
+}
+
+.main-nav span {
+  cursor: pointer;
+  position: relative;
+}
+
+.main-nav span:hover {
+  color: #0050ff;
+}
+
+/* ---------- User Icon ---------- */
+.user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .header-top ul {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .header-main {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 20px;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 14px;
+  }
+}

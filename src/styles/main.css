@@ -1,0 +1,43 @@
+:root{
+  --primary: #0050ff;
+  --muted: #f4f6f8;
+  --text: #111;
+  --card: #fff;
+}
+body { margin:0; font-family: 'Inter', Arial, sans-serif; color:var(--text); background:#fff; }
+.container { max-width:1200px; margin:0 auto; padding:24px; }
+.site-header { display:flex; align-items:center; justify-content:space-between; padding:18px 24px; background:#fafafa; border-bottom:1px solid #eee; }
+.logo { font-weight:700; font-size:20px; }
+.title { font-size:40px; margin:24px 0 8px; }
+.subtitle { color:#666; margin-bottom:16px; }
+
+.filters { display:flex; gap:12px; align-items:end; margin-bottom:18px; flex-wrap:wrap; }
+.filter-item label { display:block; font-size:12px; color:#666; margin-bottom:6px; }
+.filter-item select, .filter-item input { padding:10px; border:1px solid #ddd; border-radius:6px; min-width:160px; }
+.btn-primary { background:var(--primary); color:#fff; border:none; padding:10px 14px; border-radius:24px; cursor:pointer; }
+
+.card { background:var(--card); padding:18px; border-radius:8px; box-shadow: 0 1px 0 rgba(0,0,0,0.03); margin-bottom:18px; }
+
+.chat-widget { position:fixed; right:22px; bottom:22px; width:320px; box-shadow:0 6px 30px rgba(0,0,0,0.12); border-radius:8px; overflow:hidden; font-size:14px; }
+.chat-widget.closed { height:auto; width:160px; }
+.chat-header { background:#fff; padding:12px; font-weight:600; cursor:pointer; border-bottom:1px solid #eee; }
+.chat-body { background:#fff; display:flex; flex-direction:column; height:360px; }
+.messages { padding:12px; flex:1; overflow:auto; }
+.msg { margin-bottom:10px; padding:8px 10px; border-radius:8px; max-width:85%; }
+.msg.user { background:#e6f0ff; align-self:flex-end; }
+.msg.bot { background:#f4f6f8; align-self:flex-start; }
+.chat-input { display:flex; gap:8px; padding:12px; border-top:1px solid #eee; }
+.chat-input input { flex:1; padding:10px; border:1px solid #ddd; border-radius:6px; }
+
+.site-footer { margin-top:40px; background:#f5f5f7; padding:40px 24px; }
+.footer-top { display:flex; gap:18px; }
+.subscribe-card, .podcast-card { flex:1; padding:18px; background:#fff; border-radius:8px; }
+.footer-links { display:flex; gap:40px; margin-top:24px; color:#666; }
+.footer-bottom { margin-top:16px; color:#999; font-size:13px; }
+
+/* responsive */
+@media (max-width:800px) {
+  .title { font-size:28px; }
+  .filters { flex-direction:column; align-items:flex-start; }
+  .footer-links { flex-direction:column; gap:12px; }
+}

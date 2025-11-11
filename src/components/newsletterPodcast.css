@@ -1,0 +1,68 @@
+.newsletter-podcast {
+  background: #f7f7f7;
+  padding: 60px 40px;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.np-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.np-card {
+  background: #ebebeb;
+  border-radius: 14px;
+  padding: 40px 30px;
+  flex: 1 1 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.np-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.np-card p {
+  font-size: 17px;
+  color: #4a4a4a;
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+.np-btn {
+  align-self: flex-start;
+  background: #0050ff;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 15px;
+}
+
+.np-btn:hover {
+  background: #003bd1;
+}
+
+@media (max-width: 900px) {
+  .newsletter-podcast {
+    padding: 40px 20px;
+  }
+
+  .np-card {
+    flex: 1 1 100%;
+  }
+}

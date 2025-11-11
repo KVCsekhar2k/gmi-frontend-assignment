@@ -1,0 +1,172 @@
+.chart-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  font-family: "Inter", Arial, sans-serif;
+  color: #111;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 24px;
+}
+
+.tab {
+  padding-bottom: 12px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+
+.tab.active {
+  color: #000;
+  border-bottom: 3px solid #000;
+}
+
+/* ---------- Filters ---------- */
+.filters-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.filter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter label {
+  font-size: 15px;
+  color: #333;
+}
+
+.dropdown-box {
+  border: 1px solid #ddd;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  background: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #333;
+}
+
+/* ---------- Category Buttons ---------- */
+.category-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.cat-btn {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 18px;
+  background: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cat-btn.active {
+  background: #0050ff;
+  color: #fff;
+  border-color: #0050ff;
+}
+
+.cat-btn:hover {
+  background: #e8efff;
+}
+
+/* ---------- Chart ---------- */
+.chart-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.chart-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .category-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- AI Search Bar ---------- */
+.ai-search-container {
+  margin: 20px 0 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.ai-search-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background: #f5f7fa;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ai-search-form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 16px;
+  font-size: 15px;
+  outline: none;
+  color: #333;
+}
+
+.ai-search-form input::placeholder {
+  color: #888;
+}
+
+.ai-search-btn {
+  background: #0050ff;
+  color: white;
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  margin-right: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.ai-search-btn:hover {
+  background: #003bd1;
+}
