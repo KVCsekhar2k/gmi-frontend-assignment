@@ -19,7 +19,7 @@ export default function ChartSection() {
   const [query, setQuery] = useState("");
   const inputRef = useRef(null);
 
-  // ✅ Default dummy data to show initially
+  //  Default dummy data to show initially
   const defaultChartData = [
     { year: 2015, value: 2000 },
     { year: 2016, value: 4000 },
@@ -33,11 +33,11 @@ export default function ChartSection() {
     { year: 2024, value: 31000 },
   ];
 
-  // ✅ Fetch backend data when category changes
+  //  Fetch backend data when category changes
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/data/all", {
+        const res = await axios.get("http://localhost:5000/api/data?category=", {
           params: { category: activeCategory },
         });
         if (res.data && res.data.length > 0) {
@@ -53,7 +53,7 @@ export default function ChartSection() {
     fetchData();
   }, [activeCategory]);
 
-  // ✅ AI-powered search handler
+  // AI-powered search handler
   const handleAiSearch = async (e) => {
     e.preventDefault();
     if (!query.trim()) return;
@@ -73,7 +73,7 @@ export default function ChartSection() {
     }
   };
 
-  // ✅ Format data for chart
+  //  Format data for chart
   const chartData =
     data && data.length
       ? Object.values(
@@ -169,7 +169,7 @@ export default function ChartSection() {
             <XAxis dataKey="year" />
             <YAxis />
             <Tooltip formatter={(v) => v.toLocaleString()} />
-            {/* ✅ Single color for all bars */}
+            {/* Single color for all bars */}
             <Bar dataKey="value" fill="#0066FF" barSize={40} />
           </BarChart>
         </ResponsiveContainer>
