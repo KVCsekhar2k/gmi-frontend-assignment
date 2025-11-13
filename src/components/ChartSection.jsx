@@ -37,7 +37,7 @@ export default function ChartSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/data?category=", {
+        const res = await axios.get("http://localhost:5000/api/data?category=all", {
           params: { category: activeCategory },
         });
         if (res.data && res.data.length > 0) {
